@@ -1,0 +1,1639 @@
+/* Background video styles */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#signreturn {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -11;
+}
+
+#boardreturn {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -11;
+}
+
+
+#megaback {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1002;
+}
+
+#megabacks {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1001;
+  display: none;
+}
+
+
+#signimg {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -10;
+}
+
+/* Ensure body allows full coverage */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+  font-family: serif;
+  user-select: none;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-drag: none;
+}
+
+/* Cambridge font */
+@font-face {
+  font-family: 'Cambridge';
+  src: url('./fonts/Cambridge.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jenson-bold';
+  src: url('./fonts/Jenson-Bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jenson-semibold';
+  src: url('./fonts/Jenson-Semibold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jenson-semibolditalic';
+  src: url('./fonts/Jenson-SemiboldItalic.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cheers';
+  src: url('./fonts/EuclidTriangleRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'cheersb';
+  src: url('./font/cheersb.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.portfolio {
+  position: fixed;
+  color: #f1f1f1;
+  width: 100%;
+  top: 22vh;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  margin-left: 17vw;
+  z-index: -1;
+}
+
+.gothic {
+  font-family: "Cambridge", sans-serif;
+  font-size: 11.5vw;
+  font-weight: normal;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  padding-bottom: 0%;
+  margin-bottom: 0%;
+}
+
+.clicker {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  border: none;
+  color: #f1f1f1;
+  cursor: pointer;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes menutext-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  45%, 55% {
+    opacity: 0.75;
+  }
+}
+
+.menutext {
+  font-family: "Jenson-semibold", serif;
+  font-size: 1.5vw;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  display: block;
+  position: fixed;
+  top: 75vh;
+  left: 43vw;
+  animation: menutext-blink 3s ease-in-out infinite;
+}
+
+.name {
+  display: none;
+ position: fixed;
+  color: #f1f1f1;
+  width: 100%;
+  top: 22vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-left: 17vw;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.svg {
+  display: block;
+  width: 64.2vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  margin-top: -2vw;
+}
+
+h3  {
+  font-family: "Jenson-semibold", serif;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  margin-top: -0.5%;
+  margin-left: 1.8vw;
+  padding-top: 1vh;
+  font-size: 1.5vw;
+  text-transform: uppercase;
+}
+
+li {
+  font-family: "Jenson-semibold", serif;
+  font-size: 1.5vw;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  margin: 3vh 0;
+  text-align: center;
+}
+
+ul {
+  display: block;
+  position: fixed;
+  top: 65vh;
+  left: 28.5%;
+  list-style: none;
+  padding: 0;
+}
+
+.sign {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  opacity: 0;
+}
+
+.circle {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 4vw;
+  height: 4vw;
+  max-width: 240px;
+  max-height: 240px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(17, 41, 45, 0.95);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  z-index: -2;
+}
+
+.circle:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.circle img {
+  width: 300%;
+  height: 300%;
+  object-fit: contain;
+  margin-left: -60%;
+  margin-top: -60%;
+}
+
+.sign video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.board {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  opacity: 0;
+}
+
+.circleboard {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 4vw;
+  height: 4vw;
+  max-width: 240px;
+  max-height: 240px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(17, 41, 45, 0.95);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  z-index: -2;
+}
+
+.circleboard:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.circleboard img {
+  width: 300%;
+  height: 300%;
+  object-fit: contain;
+  margin-left: -60%;
+  margin-top: -60%;
+}
+
+.board video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#board-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  z-index: -10;
+  overflow: hidden;
+}
+
+#boardimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+#ball {
+  position: absolute;
+  top: 69%;
+  left: 71.3%;
+  width: 19.4%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+#ball:hover {
+  opacity: 1;
+}
+
+#buttle {
+  position: absolute;
+  top: 44%;
+  left: 51.7%;
+  width: 21%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+#buttle:hover {
+  opacity: 1;
+}
+
+#healer {
+  position: absolute;
+  top: 54%;
+  left: 33%;
+  width: 20%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+#healer:hover {
+  opacity: 1;
+}
+
+.sorcerer {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+#sphereback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.scontainer1 {
+  position: absolute;
+  top: 41%;
+  left: 21%;
+  width: 32%;
+  height: 18.3%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10001;
+  background-color: rgba(1, 17, 31, 0.795);
+}
+
+.scontainer2 {
+  position: absolute;
+  top: 67%;
+  left: 21%;
+  width: 32%;
+  height: 18.3%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10001;
+  background-color: rgba(1, 17, 31, 0.795);
+  transition: transform 0.3s ease;
+}
+
+.scontainer2:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.scontainer3 {
+  position: absolute;
+  top: 86%;
+  left: 23%;
+  width: 28%;
+  height: 7%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10001;
+  background-color: rgba(1, 17, 31, 0.795);
+}
+
+.scontainer4 {
+  position: absolute;
+  top: 64.45%;
+  left: 62%;
+  width: 19%;
+  height: 24.1%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10001;
+  background-color: rgb(1, 17, 31);
+  transition: transform 0.3s ease;
+}
+
+.scontainer4:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.scontainer4::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 1.5vw solid transparent;
+  border-bottom: 1.5vw solid transparent;
+  border-left: 2.4vw solid rgba(255, 255, 255, 0.95);
+}
+
+.scontainer5 {
+  position: absolute;
+  top: 31.95%;
+  left: 62%;
+  width: 19%;
+  height: 24.1%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10001;
+  transition: transform 0.3s ease;
+}
+
+.scontainer5:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.scontainer6 {
+  position: absolute;
+  top: 48%;
+  left: 85%;
+  width: 19%;
+  height: 57%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10001;
+  transition: transform 0.3s ease;
+}
+
+.scontainer6:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.sorcerer div {
+  container-type: inline-size;
+}
+
+.sphere-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10002;
+}
+
+#s3 {
+  object-position: 10% 72%;
+}
+
+.scircle {
+  position: absolute;
+  top: 86%;
+  left: 5%;
+  width: 5vw;
+  height: 5vw;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 50%;
+  background: rgba(1, 17, 31, 0.795);
+  transform: translate(-50%, -50%);
+  z-index: 10002;
+  overflow: hidden;
+}
+
+.scircle:hover {
+  background: rgba(1, 17, 31, 0.356);
+  border-color: rgba(255, 255, 255, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.scircle img {
+  width: 300%;
+  height: 300%;
+  object-fit: contain;
+  margin-left: -60%;
+  margin-top: -60%;
+}
+
+.sorcerer p {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  text-align: left;
+  z-index: 10003;
+  font-family: "Jenson-semibolditalic", serif;
+  color: white;
+  font-size: 10cqw;
+}
+
+.sobjects p {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  text-align: left;
+  z-index: 10003;
+  font-family: "Jenson-semibolditalic", serif;
+  color: white;
+  font-size: 10cqw;
+}
+
+.scontainer6 p {
+ bottom: -6%;
+ left: 26%;
+}
+
+.scontainer5 p {
+ bottom: -17%;
+ left: 22%;
+}
+
+.scontainer4 p {
+ bottom: -15.5%;
+ left: 22%;
+}
+.scontainer3 p {
+ bottom: -65%;
+ left: 40%;
+ font-size: 7cqw;
+ white-space: nowrap;
+ font-family: "Jenson-Semibold", serif;
+}
+
+.sobjects .scontainer3 p {
+ font-size: 2cqw;
+ left: 20%;
+}
+
+
+.scontainer2 p {
+ bottom: -28%;
+ left: 16%;
+ font-size: 6.5cqw;
+}
+
+.scontainer1 p {
+ bottom: 30%;
+ left: 25%;
+ font-size: 6.5cqw;
+}
+
+.scontainer1 #description {
+ bottom: -21%;
+ left: 48.5%;
+ font-size: 3cqw;
+ white-space: nowrap;
+}
+
+.sorcerer .circle {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 3.8vw;
+  height: 3.8vw;
+  max-width: 240px;
+  max-height: 240px;
+  border: none;
+  background: rgb(1, 17, 31);
+  transform: translate(-50%, -50%);
+  z-index: 10004;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#s2c {
+  top: 58%;
+  left: 5%;
+}
+
+#s4c {
+  top: 52.5%;
+  left: 52.5%;
+}
+
+#s5c {
+  top: 20%;
+  left: 52.5%;
+}
+
+#s6c {
+  top: 19.5%;
+  left: 75.5%;
+}
+
+  .sorcerer  .circle p {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10005;
+    font-family: "Jenson-semibold", serif;
+    color: white;
+    font-size: 70cqw;
+  }
+
+.sobjects {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.sobjects.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#sphereback2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  filter: brightness(0.45);
+}
+
+#so1{
+  background-color: rgba(8, 15, 22, 0.781);
+  z-index: 11006;
+  left: 65%;
+  top: 50%;
+  width: 31.7%;
+  height: 75%;
+}
+
+#so2{
+  background-color: rgba(8, 15, 22, 0.781);
+  z-index: 11006;
+  top: 74%;
+  height: 13%;
+}
+
+#so3{
+  background-color: rgba(8, 15, 22, 0.781);
+  z-index: 11006;
+  top: 60%;
+  height: 13%;
+}
+
+#so4{
+  background-color: rgba(8, 15, 22, 0.781);
+  z-index: 11006;
+  top: 46%;
+  height: 13%;
+}
+
+.sobjects .scontainer3 {
+  background-color: rgba(8, 15, 22, 0.781);
+  transition: transform 0.3s ease;
+}
+
+/* Hover: make containers #so2, #so3, #so4 a bit bigger */
+#so2:hover,
+#so3:hover,
+#so4:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.sobjects .circle {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 3.8vw;
+  height: 3.8vw;
+  max-width: 240px;
+  max-height: 240px;
+  border: none;
+  background: rgba(2, 41, 75, 0.897);
+  transform: translate(-50%, -50%);
+  z-index: 10004;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#soc2 {
+  top: 50%;
+  left: 13%;
+}
+
+#soc3 {
+  top: 50%;
+  left: 13%;
+}
+
+#soc4 {
+  top: 50%;
+  left: 13%;
+}
+
+.sobjects  .circle p {
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10005;
+    font-family: "Jenson-semibold", serif;
+    color: white;
+    font-size: 3cqw;
+  }
+
+#so2 .textmove {
+  left: 50%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#so3 .textmove {
+  left: 47%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#so4 .textmove {
+  left: 43%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#so2 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 51%;
+}
+
+#so3 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 38%;
+}
+
+#so4 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 42%;
+}
+
+.svideo {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.sv {
+  position: absolute;
+  top: 0;
+  left: 27%;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+#svplay {
+  position: absolute;
+  top: 86%;
+  left: 11%;
+  width: 5vw;
+  height: 5vw;
+  max-width: 80px;
+  max-height: 80px;
+  min-width: 32px;
+  min-height: 32px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(1, 17, 31, 0.65);
+  cursor: pointer;
+  z-index: 10006;
+}
+
+/* Triangle play icon */
+#svplay::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, -50%);
+  width: 0;
+  height: 0;
+  border-top: 1.15em solid transparent;
+  border-bottom: 1.15em solid transparent;
+  border-left: 2em solid rgba(255, 255, 255, 0.95);
+}
+
+.sscene {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.ssceneb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sscene .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.sscene .scircle p {
+  position: absolute;
+  font-family: jenson-semibold, serif;
+  color: white;
+  left: 37%;
+  top: -25%;
+  font-size: 2.5cqw;
+}
+
+#c1 {
+  left: 13%;
+}
+
+#c2 {
+  left: 19%;
+}
+
+#c3 {
+  left: 25%;
+}
+
+.srender{
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.srenderimg {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cheers {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.cheers p {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  text-align: left;
+  z-index: 10003;
+  font-family: cheers, serif;
+  font-weight: bolder;
+  color: white;
+  font-size: 10cqw;
+}
+
+
+
+.cheers div {
+  container-type: inline-size;
+}
+
+.cheers .scontainer1 p {
+  bottom: 30%;
+  left: 25%;
+  font-size: 6.5cqw;
+}
+
+.cheers .scontainer2 p {
+ bottom: -28%;
+ left: 16%;
+ font-size: 6.5cqw;
+}
+
+.cheers .scontainer3 p {
+ bottom: -65%;
+ left: 20%;
+ font-size: 7cqw;
+ white-space: nowrap;
+}
+
+.cheers .scontainer4 p {
+ bottom: -15.5%;
+ left: 22%;
+}
+
+.cheers .scontainer5 p {
+ bottom: -17%;
+ left: 22%;
+}
+
+.cheers .scontainer6 p {
+ bottom: -6%;
+ left: 26%;
+}
+
+.cheers .scontainer1 #description {
+ bottom: -21%;
+ left: 45.5%;
+ font-size: 3cqw;
+ white-space: nowrap;
+}
+
+.cheers .circle {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 3.8vw;
+  height: 3.8vw;
+  max-width: 240px;
+  max-height: 240px;
+  border: none;
+  background: rgb(184, 10, 10);
+  transform: translate(-50%, -50%);
+  z-index: 10004;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cheers #s2c {
+  top: 58%;
+  left: 5%;
+}
+
+.cheers #s4c {
+  top: 52.5%;
+  left: 52.5%;
+}
+
+.cheers #s5c {
+  top: 20%;
+  left: 52.5%;
+}
+
+.cheers #s6c {
+  top: 19.5%;
+  left: 75.5%;
+}
+
+.cheers  .circle p {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10005;
+    font-family: "Jenson-semibold", serif;
+    color: white;
+    font-size: 70cqw;
+  }
+
+.cheers div {
+  background-color: rgba(184, 10, 10, 0.637);
+}
+
+.cheers .scircle:hover {
+  background: rgba(218, 23, 23, 0.411);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.cscene {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.cscene div {
+  background-color: rgba(184, 10, 10, 0.637);
+}
+
+.cscene .scircle:hover {
+  background: rgba(218, 23, 23, 0.411);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.cscene .ssceneb {
+  position: absolute;
+  top: 5%;
+  left: 27%;
+  width: auto;
+  height: 90%;
+  object-fit: cover;
+}
+
+.cscene .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.cscene .scircle p {
+  position: absolute;
+  font-family: cheers, serif;
+  font-weight: bolder;
+  color: white;
+  left: 37%;
+  top: -30%;
+  font-size: 2.5cqw;
+}
+
+.ctests {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.ctests div {
+  background-color: rgba(184, 10, 10, 0.637);
+}
+
+.ctests .scircle:hover {
+  background: rgba(218, 23, 23, 0.411);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.ctests .ssceneb {
+  position: absolute;
+  top: 5%;
+  left: 29%;
+  width: auto;
+  height: 90%;
+  object-fit: cover;
+}
+
+.ctests .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.ctests .scircle p {
+  position: absolute;
+  font-family: cheers, serif;
+  font-weight: bolder;
+  color: white;
+  left: 37%;
+  top: -30%;
+  font-size: 2.5cqw;
+}
+
+.chscene {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.chscene div {
+  background-color: rgba(184, 10, 10, 0.637);
+}
+
+.chscene .scircle:hover {
+  background: rgba(218, 23, 23, 0.411);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.chscene .ssceneb {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chscene .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.chscene .scircle p {
+  position: absolute;
+  font-family: cheers, serif;
+  font-weight: bolder;
+  color: white;
+  left: 37%;
+  top: -30%;
+  font-size: 2.5cqw;
+}
+
+.cheers #sphereback {
+  object-fit: cover;
+}
+
+.cscene #sphereback2 {
+  object-fit: cover;
+}
+
+.ctests #sphereback2 {
+  object-fit: cover;
+}
+
+.crender {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.crender div {
+  background-color: rgba(184, 10, 10, 0.637);
+}
+
+.crender .scircle:hover {
+  background: rgba(218, 23, 23, 0.411);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.crender .ssceneb {
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+
+.crender .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.crender #sphereback2 {
+  object-fit: cover;
+}
+
+.game {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.game .scontainer7 {
+  position: absolute;
+  top: 48%;
+  left: 62%;
+  width: 19%;
+  height: 57%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  z-index: 10001;
+  transition: transform 0.3s ease;
+}
+
+.scontainer7:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.game p {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  text-align: left;
+  z-index: 10003;
+  font-family: Jenson-semibolditalic, serif;
+  color: white;
+  font-size: 10cqw;
+}
+
+
+.game div {
+  container-type: inline-size;
+}
+
+.game .scontainer1 p {
+  bottom: 30%;
+  left: 25%;
+  font-size: 6.5cqw;
+}
+
+.game .scontainer2 p {
+ bottom: -28%;
+ left: 16%;
+ font-size: 6.5cqw;
+}
+
+.game .scontainer3 p {
+ bottom: -65%;
+ left: 38%;
+ font-size: 7cqw;
+ white-space: nowrap;
+}
+
+
+.game .scontainer7 p {
+ bottom: -6%;
+ left: 26%;
+}
+
+.game .scontainer6 p {
+ bottom: -6%;
+ left: 26%;
+}
+
+.game .scontainer1 #description {
+ bottom: -10%;
+ left: 48%;
+ font-size: 3cqw;
+ white-space: nowrap;
+}
+
+.game .circle {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 3.8vw;
+  height: 3.8vw;
+  max-width: 240px;
+  max-height: 240px;
+  border: none;
+  background: #1d424b;
+  transform: translate(-50%, -50%);
+  z-index: 10004;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.game #s2c {
+  top: 58%;
+  left: 5%;
+}
+
+.game #s5c {
+  top: 20%;
+  left: 52.5%;
+}
+
+.game #s6c {
+  top: 19.5%;
+  left: 75.5%;
+}
+
+.game  .circle p {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10005;
+    font-family: "Jenson-semibold", serif;
+    color: white;
+    font-size: 70cqw;
+  }
+
+.game div {
+  background-color: #010e11b4;
+}
+
+.game .scircle:hover {
+  background: rgba(29, 66, 75, 0.712);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.gobjects {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.gobjects .ssceneb {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gobjects .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.gobjects .scircle p {
+  position: absolute;
+  font-family: cheers, serif;
+  font-weight: bolder;
+  color: white;
+  left: 37%;
+  top: -30%;
+  font-size: 2.5cqw;
+}
+
+.gobjects div {
+  background-color: #010e11b4;
+}
+
+.gobjects .scircle:hover {
+  background: rgba(29, 66, 75, 0.712);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.gobjects #c4 {
+  left: 31%;
+}
+
+.gobjects #c5 {
+  left: 37%;
+}
+
+.gscene {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.gscene .ssceneb {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gscene .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.gscene .scircle p {
+  position: absolute;
+  font-family: cheers, serif;
+  font-weight: bolder;
+  color: white;
+  left: 37%;
+  top: -30%;
+  font-size: 2.5cqw;
+}
+
+.gscene div {
+  background-color: #010e11b4;
+}
+
+.gscene .scircle:hover {
+  background: rgba(29, 66, 75, 0.712);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.gscene #c4 {
+  left: 31%;
+}
+
+.gscene #c5 {
+  left: 37%;
+}
+
+.gscene #c6 {
+  left: 43%;
+}
+
+.gscene #c7 {
+  left: 49%;
+}
+
+.gscene #c8 {
+  left: 55%;
+}
+
+.ggame {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+}
+
+.ggame .ssceneb {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  background-color: black;
+}
+
+.yt {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ggame .scircle {
+  position: absolute;
+  z-index: 13000;
+}
+
+.ggame .scircle p {
+  position: absolute;
+  font-family: cheers, serif;
+  font-weight: bolder;
+  color: white;
+  left: 37%;
+  top: -30%;
+  font-size: 2.5cqw;
+}
+
+.ggame div {
+  background-color: #010e11b4;
+}
+
+.ggame .scircle:hover {
+  background: rgba(29, 66, 75, 0.712);
+  transform: translate(-50%, -50%) scale(1.1);
+}

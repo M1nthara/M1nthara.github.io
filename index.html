@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blank HTML</title>
+    <link rel="stylesheet" href="sff.css">
+</head>
+<body>
+    <img src="background.webp" id="megaback" alt="">
+
+
+    <div class="base">
+        <video id="bg-video" src="./start.mp4" autoplay loop muted playsinline></video>
+        <!-- Add future content here -->
+        <button class="clicker" onclick="handleClick()">
+        <div class="portfolio">
+         <h1 class="gothic">Portfolio</h1>
+         <p class="menutext">Press left mouse button</p>
+        </div>
+        </button>
+        <div class="name">
+            <h1 class="gothic">Tymofii Titenko</h1>
+            <img src="gothic/svg.png"  class="svg">
+            <h3 id="altxt">DESIGNER, 3D ARTIST AND GAME DEVELOPER</h3>
+            <ul>
+                <li onclick="worksClick()">Works</li>
+                <li onclick="aboutMeClick()">About Me</li>
+                <li onclick="exitClick()">Exit</li>
+            </ul>
+        </div>
+    </div>
+    <div class="sign">
+        <video id="bg-video" src="./signmove.mp4" muted playsinline></video>
+        <img src="sign.jpg" id="signimg" alt="Sign">
+        <div class="circle" onclick="circleClick()">
+            <img src="arrow.svg" alt="Circle">
+        </div>
+        <video id="signreturn" src="./signmove-reverse.mp4" muted playsinline></video>
+    </div>
+    <div class="board">
+        <video id="bg-video" src="./boardmove.mp4" muted playsinline></video>
+        <div id="board-container">
+        <img id="boardimg" src="board.jpg" />
+        <img id="ball" src="ball.png" onclick="ballClick()" />
+        <img src="buttle.png" id="buttle" alt="" onclick="cheersShow()">
+        <img src="healer.png" id="healer" alt="" onclick="gcheersShow()">
+
+        </div>
+        <div class="circleboard" onclick="circleBoardClick()">
+            <img src="arrow.svg" alt="Circle">
+        </div>
+        <video id="boardreturn" src="./boardmove-reverse.mp4" muted playsinline></video>
+    </div>
+    <div class="sorcerer">
+            <img src="/SPHERE/blured.jpg" id="sphereback" alt="Sphere">
+            <div class="scontainer1">
+                <p>DESCRIPTION</p>
+                <p id="description">This project was made by completing one of the courses by CG Fast Track. The<br>
+                project is completely done inside Blender. Everything (Except for the Tree Trunk,<br>
+                 its a scan) was modelled by me, unwrapped and compositioned. Here u ll be able<br>
+                to see different perspectives, rendering modes and animation.</p>
+            </div>
+            <div class="scontainer2">
+                <img src="SPHERE/3.jpg" class="sphere-img" id="s3">
+                <p>OBJECTS</p>
+            </div>
+            <div class="circle" id="s2c"><p>!</p></div>
+            <div class="scontainer3">
+                <p>SORCERER`S TABLE</p>
+            </div>
+        <div class="scontainer4" onclick="sVideoShow()">
+                <p>VIDEO</p>
+        </div>
+
+            <div class="circle" id="s4c"><p>!</p></div>
+            <div class="scontainer5" onclick="sSceneShow()">
+                <img src="/SPHERE/SPHERE.jpg" class="sphere-img" alt="Sphere">
+                <p>SCENE</p>
+            </div>
+
+            <div class="circle" id="s5c"><p>!</p></div>
+            <div class="scontainer6" onclick="sRenderShow()">
+                <img src="/SPHERE/high res.jpg" class="sphere-img">
+                <p>RENDER</p>
+            </div>
+
+            <div class="circle" id="s6c"><p>!</p></div>
+            <div class="scircle" onclick="scircleClick()">
+                <img src="arrow.svg" alt="Circle">      
+            </div>
+    </div>
+
+    <div class="sobjects">
+        <img src="/SPHERE/blured.jpg" id="sphereback2" alt="Sphere">
+        <div class="scontainer6" id="so1">
+            <img src="/SPHERE/3.jpg" class="sphere-img" id="si1">
+            <img src="/SPHERE/4.jpg" class="sphere-img" id="si2">
+            <img src="/SPHERE/5.jpg" class="sphere-img" id="si3">
+        </div> 
+        <div class="scontainer3">
+                <p>OBJECTS</p>
+        </div>
+        <div class="scontainer3" id="so2" onclick="so2Click()">
+            <div class="circle" id="soc2"><p>!</p></div>
+            <p class="textmove">DOOM SCROLL</p>
+            <p class="smalltext">The main enemy of finishing the portfolio</p>
+        </div>
+
+        <div class="scontainer3" id="so3" onclick="so3Click()">
+            <div class="circle" id="soc3"><p>!</p></div>
+            <p class="textmove">SOME BOOKS</p>
+            <p class="smalltext">Regular books, really</p>
+        </div>
+
+        <div class="scontainer3" id="so4" onclick="so4Click()">
+            <div class="circle" id="soc4"><p>!</p></div>
+            <p class="textmove">ONE RING</p>
+            <p class="smalltext">One Ring to rule them all</p>
+        </div>
+
+        <div class="scircle" onclick="sobjectsClose()">
+                <img src="arrow.svg" alt="Circle">     
+        </div>
+    </div>
+    <div class="svideo">
+         <img src="/SPHERE/blured.jpg" id="sphereback2" alt="Sphere">
+         <div class="scircle" onclick="sVideoHide()">
+                <img src="arrow.svg" alt="Circle">     
+        </div>
+        <video src="SPHERE/video.mp4" class="sv" id="sv"></video>
+        <div class="scircle" id="svplay" onclick="svPlay()"><p>!</p></div>
+
+    </div>
+    <div class="sscene">
+        <img src="/SPHERE/1 MAP.jpg" class="ssceneb" id="uv" alt="Sphere">
+        <img src="/SPHERE/1 OBJ.jpg" class="ssceneb" id="nor" alt="Sphere">
+        <img src="/SPHERE/SPHERE.jpg" class="ssceneb" id="ren" alt="Sphere">
+        <div class="scircle" onclick="sSceneHide()">
+                <img src="arrow.svg" alt="Circle">   
+        </div> 
+        <div class="scircle" id="c1" onclick="sSceneC1Click()" >
+                <p>1</p>  
+        </div>
+         <div class="scircle" id="c2" onclick="sSceneC2Click()">
+                <p>2</p>  
+        </div>
+         <div class="scircle" id="c3" onclick="sSceneC3Click()">
+                <p>3</p>  
+        </div>
+
+    </div>
+    <div class="srender">
+         <img src="/SPHERE/blured.jpg" id="sphereback2" alt="Sphere">
+         <div class="scircle" onclick="sRenderHide()">
+                <img src="arrow.svg" alt="Circle">   
+        </div> 
+        <img src="/SPHERE/high res.jpg" class="srenderimg" alt="Sphere">
+    </div>
+
+        <div class="cheers">
+            <img src="/CHEERS/blur.webp" id="sphereback" alt="Sphere">
+            <div class="scontainer1">
+
+                <p>DESCRIPTION</p>
+                <p id="description">This project was made in university in pairs for a glass bottle<br>
+                contest. It was made in Blender and my part was the final<br>
+                render, composition and materials. Materials were made in<br>
+                Substance Painter.</p>
+            </div>
+            <div class="scontainer2" onclick="cSceneShow()">
+                <img src="/CHEERS/PIPIPIP.jpg" class="sphere-img" id="s3">
+                <p>BOTTLE</p>
+            </div>
+
+            <div class="circle" id="s2c"><p>!</p></div>
+            <div class="scontainer3">
+                <p>CHEERS</p>
+            </div>
+            <div class="scontainer4" onclick="cVideoShow()">
+                <img src="/CHEERS/tanotherest.jpg" class="sphere-img" alt="Sphere">
+                <p>Tests</p>
+            </div>
+
+
+            <div class="circle" id="s4c"><p>!</p></div>
+            <div class="scontainer5" onclick="chVideoShow()">
+                <img src="/CHEERS/5.jpg" class="sphere-img" alt="Sphere">
+                <p>SCENE</p>
+            </div>
+
+            <div class="circle" id="s5c"><p>!</p></div>
+            <div class="scontainer6" onclick="cRenderShow()">
+                <img src="/CHEERS/444.jpg" class="sphere-img">
+                <p>RENDER</p>
+            </div>
+
+            <div class="circle" id="s6c"><p>!</p></div>
+            <div class="scircle" onclick="cheersHide()">
+                <img src="arrow.svg" alt="Circle">      
+            </div>
+
+    </div>
+    <div class="cscene">
+        <img src="/CHEERS/blur.webp" id="sphereback2" alt="Sphere">
+        <img src="/CHEERS/PIPIPIP.jpg" class="ssceneb" id="b1" alt="Sphere">
+        <img src="/CHEERS/botle.jpg" class="ssceneb" id="b2" alt="Sphere">
+        <div class="scircle" onclick="cSceneHide()">
+                <img src="arrow.svg" alt="Circle">   
+        </div> 
+        <div class="scircle" id="c1" onclick="cSceneC1Click()">
+                <p>1</p>  
+        </div>
+         <div class="scircle" id="c2" onclick="cSceneC2Click()">
+                <p>2</p>  
+        </div>
+    </div>
+        <div class="ctests">
+                <img src="/CHEERS/blur.webp" id="sphereback2" alt="Sphere">
+                <img src="/CHEERS/tanotherest.jpg" class="ssceneb" id="bt1" alt="Sphere">
+                <img src="/CHEERS/test2.jpg" class="ssceneb" id="bt2" alt="Sphere">
+                <img src="/CHEERS/test3.jpg" class="ssceneb" id="bt3" alt="Sphere">
+                <div class="scircle" onclick="cVideoHide()">
+                     <img src="arrow.svg" alt="Circle">   
+                </div> 
+                <div class="scircle" id="c1" onclick="ctSceneC1Click()">
+                        <p>1</p>  
+                </div>
+                <div class="scircle" id="c2" onclick="ctSceneC2Click()">
+                        <p>2</p>  
+                </div>
+                <div class="scircle" id="c3" onclick="ctSceneC3Click()">
+                        <p>3</p>  
+                </div>
+         </div>
+         <div class="chscene">
+                <img src="/CHEERS/scene uv.jpg" class="ssceneb" id="ch1" alt="Sphere">
+                <img src="/CHEERS/scene mesh.jpg" class="ssceneb" id="ch2" alt="Sphere">
+                <img src="/CHEERS/5.jpg" class="ssceneb" id="ch3" alt="Sphere">
+                <div class="scircle" onclick="chVideoHide()">
+                     <img src="arrow.svg" alt="Circle">   
+                </div> 
+                <div class="scircle" id="c1" onclick="chSceneC1Click()">
+                        <p>1</p>  
+                </div>
+                <div class="scircle" id="c2" onclick="chSceneC2Click()">
+                        <p>2</p>  
+                </div>
+                <div class="scircle" id="c3" onclick="chSceneC3Click()">
+                        <p>3</p>  
+                </div>
+         </div>
+        <div class="crender">
+         <img src="/CHEERS/blur.webp" id="sphereback2" alt="Sphere">
+         <div class="scircle" onclick="cRenderHide()">
+                <img src="arrow.svg" alt="Circle">   
+        </div> 
+        <img src="/CHEERS/444.jpg" class="ssceneb" alt="Sphere">
+        </div>
+    
+        <div class="game">
+            <img src="/game/blur.jpg" id="sphereback" alt="Sphere">
+            <div class="scontainer1">
+
+                <p>DESCRIPTION</p>
+                <p id="description">This game was made as a final project for 3D Immersive Environments in pairs.<br>
+                It is a VR game made on Unity with use of Blender and Substance Painter. Most<br>
+                of the models and texturing are created by me.</p>
+            </div>
+            <div class="scontainer2" onclick="gSceneShow()">
+                <img src="/game/object1.jpg" class="sphere-img" id="s3">
+                <p>OBJECTS</p>
+            </div>
+
+            <div class="circle" id="s2c"><p>!</p></div>
+            <div class="scontainer3">
+                <p>ALCHEMIST`S TALE</p>
+            </div>
+            <div class="scontainer7" onclick="gVideoShow()">
+                <img src="/game/scene2.jpg" class="sphere-img" alt="Sphere">
+                <p>SCENE</p>
+            </div>
+
+            <div class="circle" id="s5c"><p>!</p></div>
+            <div class="scontainer6" onclick="gRenderShow()">
+                <img src="/game/object4.jpg" class="sphere-img">
+                <p>GAME</p>
+            </div>
+
+            <div class="circle" id="s6c"><p>!</p></div>
+            <div class="scircle" onclick="gcheersHide()">
+                <img src="arrow.svg" alt="Circle">      
+            </div>
+            
+        </div>
+        <div class="gobjects">
+                <img src="/game/object1.jpg" class="ssceneb" id="g1" alt="Sphere">
+                <img src="/game/object2.jpg" class="ssceneb" id="g2" alt="Sphere">
+                <img src="/game/object3.jpg" class="ssceneb" id="g3" alt="Sphere">
+                <img src="/game/object4.jpg" class="ssceneb" id="g4" alt="Sphere">
+                <img src="/game/object5.jpg" class="ssceneb" id="g5" alt="Sphere">
+                <div class="scircle" onclick="gSceneHide()">
+                     <img src="arrow.svg" alt="Circle">   
+                </div> 
+                <div class="scircle" id="c1" onclick="gSceneC1Click()">
+                        <p>1</p>  
+                </div>
+                <div class="scircle" id="c2" onclick="gSceneC2Click()">
+                        <p>2</p>  
+                </div>
+                <div class="scircle" id="c3" onclick="gSceneC3Click()">
+                        <p>3</p>  
+                </div>
+                <div class="scircle" id="c4" onclick="gSceneC4Click()">
+                        <p>4</p>  
+                </div>
+                <div class="scircle" id="c5" onclick="gSceneC5Click()">
+                        <p>5</p>  
+                </div>
+        </div>
+        <div class="gscene">
+                <img src="/game/uv1.jpg" class="ssceneb" id="gc1" alt="Sphere">
+                <img src="/game/uv2.jpg" class="ssceneb" id="gc2" alt="Sphere">
+                <img src="/game/uv3.jpg" class="ssceneb" id="gc3" alt="Sphere">
+                <img src="/game/uv4.jpg" class="ssceneb" id="gc4" alt="Sphere">
+                <img src="/game/scene1.jpg" class="ssceneb" id="gc5" alt="Sphere">
+                <img src="/game/scene2.jpg" class="ssceneb" id="gc6" alt="Sphere">
+                <img src="/game/scene3.jpg" class="ssceneb" id="gc7" alt="Sphere">
+                <img src="/game/scene4.jpg" class="ssceneb" id="gc8" alt="Sphere">
+                <div class="scircle" onclick="gVideoHide()">
+                     <img src="arrow.svg" alt="Circle">   
+                </div> 
+                <div class="scircle" id="c1" onclick="gcSceneC1Click()">
+                        <p>1</p>  
+                </div>
+                <div class="scircle" id="c2" onclick="gcSceneC2Click()">
+                        <p>2</p>  
+                </div>
+                <div class="scircle" id="c3" onclick="gcSceneC3Click()">
+                        <p>3</p>  
+                </div>
+                <div class="scircle" id="c4" onclick="gcSceneC4Click()">
+                        <p>4</p>  
+                </div>
+                <div class="scircle" id="c5" onclick="gcSceneC5Click()">
+                        <p>5</p>  
+                </div>
+                <div class="scircle" id="c6" onclick="gcSceneC6Click()">
+                        <p>6</p>  
+                </div>
+                <div class="scircle" id="c7" onclick="gcSceneC7Click()">
+                        <p>7</p>  
+                </div>
+                <div class="scircle" id="c8" onclick="gcSceneC8Click()">
+                        <p>8</p>  
+                </div>
+        </div>
+        <div class="ggame">
+         <img src="/game/blur.jpg" id="sphereback2" alt="Sphere">
+        <div class="ssceneb">
+            <iframe class="yt" width="1920" height="1080" src="https://www.youtube.com/embed/GSTecWcAuTI?si=nkZ-ys4svhdTDiZ-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div> 
+         <div class="scircle" onclick="gRenderHide()">
+                <img src="arrow.svg" alt="Circle">   
+        </div>
+        </div>
+    <script>
+
+        function sVideoShow() {
+            const svideo = document.querySelector('.svideo');
+            if (!svideo) return;
+
+            svideo.style.display = 'block';
+            svideo.style.opacity = '0';
+
+            // trigger layout so the transition applies reliably
+            void svideo.offsetWidth;
+
+            svideo.style.transition = 'opacity 0.5s ease';
+            svideo.style.opacity = '1';
+        }
+
+         function cVideoShow() {
+            const svideo = document.querySelector('.ctests');
+            if (!svideo) return;
+
+            svideo.style.display = 'block';
+            svideo.style.opacity = '0';
+
+            // trigger layout so the transition applies reliably
+            void svideo.offsetWidth;
+
+            svideo.style.transition = 'opacity 0.5s ease';
+            svideo.style.opacity = '1';
+        }
+
+        function chVideoShow() {
+            const svideo = document.querySelector('.chscene');
+            if (!svideo) return;
+
+            svideo.style.display = 'block';
+            svideo.style.opacity = '0';
+
+            // trigger layout so the transition applies reliably
+            void svideo.offsetWidth;
+
+            svideo.style.transition = 'opacity 0.5s ease';
+            svideo.style.opacity = '1';
+        }
+
+        function gVideoShow() {
+            const svideo = document.querySelector('.gscene');
+            if (!svideo) return;
+
+            svideo.style.display = 'block';
+            svideo.style.opacity = '0';
+
+            // trigger layout so the transition applies reliably
+            void svideo.offsetWidth;
+
+            svideo.style.transition = 'opacity 0.5s ease';
+            svideo.style.opacity = '1';
+        }
+
+        function handleClick() {
+            const clicker = document.querySelector('.clicker');
+            const name = document.querySelector('.name');
+            
+            // Fade out clicker
+            clicker.style.opacity = '0';
+            
+            // Show and fade in name
+            name.style.display = 'block';
+            setTimeout(() => {
+                name.style.opacity = '1';
+            }, 10);
+            
+            // Optionally hide clicker after fade
+            setTimeout(() => {
+                clicker.style.display = 'none';
+            }, 500);
+        }
+        
+        function aboutMeClick() {
+            const base = document.querySelector('.base');
+            const sign = document.querySelector('.sign');
+            const video = sign.querySelector('video');
+            const signimg = document.getElementById('signimg');
+            const circle = document.querySelector('.circle');
+            
+            // Hide base
+            base.style.display = 'none';
+            
+            // Show and fade in sign
+            sign.style.display = 'block';
+            setTimeout(() => {
+                sign.style.opacity = '1';
+            }, 10);
+            
+            // Play the video
+            video.style.display = 'block';
+            signimg.style.display = 'block';
+            circle.style.display = 'block';
+            video.play();
+            
+            // Hide video when it ends
+            video.addEventListener('ended', () => {
+                video.style.display = 'none';
+            });
+        }
+        
+        function circleClick() {
+            const base = document.querySelector('.base');
+            const sign = document.querySelector('.sign');
+            const circle = document.querySelector('.circle');
+            const signimg = document.getElementById('signimg');
+            const returnVideo = document.getElementById('signreturn');
+            
+            if (signimg) {
+                signimg.style.display = 'none';
+                circle.style.display = 'none';
+
+            }
+            if (returnVideo) {
+                returnVideo.style.display = 'block';
+                returnVideo.play();
+
+                returnVideo.addEventListener('ended', () => {
+                    sign.style.display = 'none';
+                    if (base) {
+                        base.style.display = 'block';
+                    }
+                }, { once: true });
+            }
+        }
+
+         function worksClick() {
+            const base = document.querySelector('.base');
+            const sign = document.querySelector('.board');
+            const video = sign.querySelector('video');
+            const circle = document.querySelector('.circleboard');
+            const signimg = document.getElementById('boardimg');
+            
+            // Hide base
+            base.style.display = 'none';
+            
+            // Show and fade in sign
+            sign.style.display = 'block';
+            setTimeout(() => {
+                sign.style.opacity = '1';
+            }, 10);
+            
+            // Play the video
+            video.style.display = 'block';
+            signimg.style.display = 'block';
+            circle.style.display = 'block';
+            video.play();
+            
+            // Hide video when it ends
+            video.addEventListener('ended', () => {
+                video.style.display = 'none';
+            });
+        }
+        
+         function circleBoardClick() {
+            const base = document.querySelector('.base');
+            const sign = document.querySelector('.board');
+            const circle = document.querySelector('.circleboard');
+            const signimg = document.getElementById('boardimg');
+            const returnVideo = document.getElementById('boardreturn');
+            
+            if (signimg) {
+                signimg.style.display = 'none';
+                circle.style.display = 'none';
+
+            }
+            if (returnVideo) {
+                returnVideo.style.display = 'block';
+                returnVideo.play();
+                returnVideo.addEventListener('ended', () => {
+                    sign.style.display = 'none';
+                    if (base) {
+                        base.style.display = 'block';
+                    }
+                }, { once: true });
+            }
+        }
+
+        function exitClick() {
+            const clicker = document.querySelector('.clicker');
+            const name = document.querySelector('.name');
+            
+            // Fade out name
+            name.style.opacity = '0';
+            
+            // Show and fade in clicker
+            clicker.style.display = 'block';
+            clicker.style.opacity = '0';
+            setTimeout(() => {
+                clicker.style.opacity = '1';
+            }, 10);
+            
+            // Hide name after fade
+            setTimeout(() => {
+                name.style.display = 'none';
+            }, 500);
+        }
+
+        function ballClick() {
+            const sorcerer = document.querySelector('.sorcerer');
+            sorcerer.style.display = 'block';
+            setTimeout(() => {
+                sorcerer.style.opacity = '1';
+            }, 10);
+        }
+
+        function cheersShow() {
+            const cheers = document.querySelector('.cheers');
+            if (!cheers) return;
+
+            cheers.style.display = 'block';
+            cheers.style.opacity = '0';
+            void cheers.offsetWidth;
+            cheers.style.transition = 'opacity 0.5s ease';
+            cheers.style.opacity = '1';
+        }
+
+        function gcheersShow() {
+            const cheers = document.querySelector('.game');
+            if (!cheers) return;
+
+            cheers.style.display = 'block';
+            cheers.style.opacity = '0';
+            void cheers.offsetWidth;
+            cheers.style.transition = 'opacity 0.5s ease';
+            cheers.style.opacity = '1';
+        }
+
+
+        function scircleClick() {
+            const sorcerer = document.querySelector('.sorcerer');
+            sorcerer.style.opacity = '0';
+            setTimeout(() => {
+                sorcerer.style.display = 'none';
+            }, 500);
+        }
+
+        function cheersHide() {
+            const cheers = document.querySelector('.cheers');
+            if (!cheers) return;
+
+            cheers.style.opacity = '0';
+            setTimeout(() => {
+                cheers.style.display = 'none';
+                cheers.style.opacity = '';
+            }, 500);
+        }
+
+        function gcheersHide() {
+            const cheers = document.querySelector('.game');
+            if (!cheers) return;
+
+            cheers.style.opacity = '0';
+            setTimeout(() => {
+                cheers.style.display = 'none';
+                cheers.style.opacity = '';
+            }, 500);
+        }
+
+
+        function sVideoHide() {
+            const svideo = document.querySelector('.svideo');
+            if (!svideo) return;
+            svideo.style.opacity = '0';
+            setTimeout(() => {
+                svideo.style.display = 'none';
+                svideo.style.opacity = '';
+            }, 500);
+        }
+
+        function cVideoHide() {
+            const svideo = document.querySelector('.ctests');
+            if (!svideo) return;
+            svideo.style.opacity = '0';
+            setTimeout(() => {
+                svideo.style.display = 'none';
+                svideo.style.opacity = '';
+            }, 500);
+        }
+
+        function chVideoHide() {
+            const svideo = document.querySelector('.chscene');
+            if (!svideo) return;
+            svideo.style.opacity = '0';
+            setTimeout(() => {
+                svideo.style.display = 'none';
+                svideo.style.opacity = '';
+            }, 500);
+        }  
+        
+        function gVideoHide() {
+            const svideo = document.querySelector('.gscene');
+            if (!svideo) return;
+            svideo.style.opacity = '0';
+            setTimeout(() => {
+                svideo.style.display = 'none';
+                svideo.style.opacity = '';
+            }, 500);
+        } 
+
+        function sRenderShow() {
+            const container = document.querySelector('.srender');
+            if (!container) return;
+
+            container.style.display = 'block';
+            container.style.opacity = '0';
+            void container.offsetWidth;
+            container.style.transition = 'opacity 0.5s ease';
+            container.style.opacity = '1';
+        }
+
+        function sRenderHide() {
+            const container = document.querySelector('.srender');
+            if (!container) return;
+
+            container.style.opacity = '0';
+            setTimeout(() => {
+                container.style.display = 'none';
+                container.style.opacity = '';
+            }, 500);
+        }
+
+        function gRenderShow() {
+            const container = document.querySelector('.ggame');
+            if (!container) return;
+
+            container.style.display = 'block';
+            container.style.opacity = '0';
+            void container.offsetWidth;
+            container.style.transition = 'opacity 0.5s ease';
+            container.style.opacity = '1';
+        }
+
+        function gRenderHide() {
+            const container = document.querySelector('.ggame');
+            if (!container) return;
+
+            container.style.opacity = '0';
+            setTimeout(() => {
+                container.style.display = 'none';
+                container.style.opacity = '';
+            }, 500);
+        }
+
+        function cRenderShow() {
+            const container = document.querySelector('.crender');
+            if (!container) return;
+
+            container.style.display = 'block';
+            container.style.opacity = '0';
+            void container.offsetWidth;
+            container.style.transition = 'opacity 0.5s ease';
+            container.style.opacity = '1';
+        }
+
+        function cRenderHide() {
+            const container = document.querySelector('.crender');
+            if (!container) return;
+
+            container.style.opacity = '0';
+            setTimeout(() => {
+                container.style.display = 'none';
+                container.style.opacity = '';
+            }, 500);
+        }
+
+        function sobjectsClose() {
+
+
+            const sobjects = document.querySelector('.sobjects');
+            if (!sobjects) return;
+            sobjects.style.opacity = '0';
+            setTimeout(() => {
+                sobjects.classList.remove('show');
+                sobjects.style.opacity = '';
+            }, 500);
+        }
+
+        function so4Click() {
+            const si2 = document.getElementById('si2');
+            const si1 = document.getElementById('si1');
+            const si3 = document.getElementById('si3');
+
+            if (si2) si2.style.zIndex = '12000';
+            if (si1) si1.style.zIndex = '11000';
+            if (si3) si3.style.zIndex = '11000';
+        }
+
+        function so3Click() {
+            const si2 = document.getElementById('si2');
+            const si1 = document.getElementById('si1');
+            const si3 = document.getElementById('si3');
+
+            if (si2) si2.style.zIndex = '11000';
+            if (si1) si1.style.zIndex = '11000';
+            if (si3) si3.style.zIndex = '12000';
+        }
+
+        function so2Click() {
+            const si2 = document.getElementById('si2');
+            const si1 = document.getElementById('si1');
+            const si3 = document.getElementById('si3');
+
+            if (si2) si2.style.zIndex = '11000';
+            if (si1) si1.style.zIndex = '12000';
+            if (si3) si3.style.zIndex = '11000';
+        }
+
+        function svPlay() {
+            const video = document.getElementById('sv');
+            if (!video) return;
+
+            video.style.display = 'block';
+            const p = video.play();
+            if (p && typeof p.catch === 'function') p.catch(() => {});
+        }
+
+        function sSceneShow() {
+            const scene = document.querySelector('.sscene');
+            if (!scene) return;
+
+            scene.style.display = 'block';
+            scene.style.opacity = '0';
+            void scene.offsetWidth;
+            scene.style.transition = 'opacity 0.5s ease';
+            scene.style.opacity = '1';
+        }
+
+         function cSceneShow() {
+            const scene = document.querySelector('.cscene');
+            if (!scene) return;
+
+            scene.style.display = 'block';
+            scene.style.opacity = '0';
+            void scene.offsetWidth;
+            scene.style.transition = 'opacity 0.5s ease';
+            scene.style.opacity = '1';
+        }
+
+        function sSceneHide() {
+            const scene = document.querySelector('.sscene');
+            if (!scene) return;
+
+            scene.style.opacity = '0';
+            setTimeout(() => {
+                scene.style.display = 'none';
+                scene.style.opacity = '';
+            }, 500);
+        }
+
+        function gSceneShow() {
+            const scene = document.querySelector('.gobjects');
+            if (!scene) return;
+
+            scene.style.display = 'block';
+            scene.style.opacity = '0';
+            void scene.offsetWidth;
+            scene.style.transition = 'opacity 0.5s ease';
+            scene.style.opacity = '1';
+        }
+
+        function gSceneHide() {
+            const scene = document.querySelector('.gobjects');
+            if (!scene) return;
+
+            scene.style.opacity = '0';
+            setTimeout(() => {
+                scene.style.display = 'none';
+                scene.style.opacity = '';
+            }, 500);
+        }
+
+        function cSceneHide() {
+            const scene = document.querySelector('.cscene');
+            if (!scene) return;
+
+            scene.style.opacity = '0';
+            setTimeout(() => {
+                scene.style.display = 'none';
+                scene.style.opacity = '';
+            }, 500);
+        }
+
+        function sSceneC1Click() {
+            const ren = document.getElementById('ren');
+            const uv = document.getElementById('uv');
+            const nor = document.getElementById('nor');
+
+            if (ren) ren.style.zIndex = '12000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '11000';
+        }
+
+        function sSceneC2Click() {
+            const ren = document.getElementById('ren');
+            const uv = document.getElementById('uv');
+            const nor = document.getElementById('nor');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '12000';
+            if (nor) nor.style.zIndex = '11000';
+        }
+
+        function sSceneC3Click() {
+            const ren = document.getElementById('ren');
+            const uv = document.getElementById('uv');
+            const nor = document.getElementById('nor');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '12000';
+        }
+
+         function cSceneC1Click() {
+            const ren = document.getElementById('b2');
+            const uv = document.getElementById('b1');
+           
+
+            if (ren) ren.style.zIndex = '12000';
+            if (uv) uv.style.zIndex = '11000';
+        }
+
+        function cSceneC2Click() {
+            const ren = document.getElementById('b2');
+            const uv = document.getElementById('b1');
+           
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '12000';
+        }
+
+        function ctSceneC1Click() {
+            const ren = document.getElementById('bt1');
+            const uv = document.getElementById('bt2');
+            const nor = document.getElementById('bt3');
+
+            if (ren) ren.style.zIndex = '12000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '11000';
+        }
+
+        function ctSceneC2Click() {
+            const ren = document.getElementById('bt1');
+            const uv = document.getElementById('bt2');
+            const nor = document.getElementById('bt3');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '12000';
+            if (nor) nor.style.zIndex = '11000';
+        }
+
+        function ctSceneC3Click() {
+            const ren = document.getElementById('bt1');
+            const uv = document.getElementById('bt2');
+            const nor = document.getElementById('bt3');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '12000';
+        }
+
+        function chSceneC1Click() {
+            const ren = document.getElementById('ch1');
+            const uv = document.getElementById('ch2');
+            const nor = document.getElementById('ch3');
+
+            if (ren) ren.style.zIndex = '12000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '11000';
+        }
+
+        function chSceneC2Click() {
+            const ren = document.getElementById('ch1');
+            const uv = document.getElementById('ch2');
+            const nor = document.getElementById('ch3');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '12000';
+            if (nor) nor.style.zIndex = '11000';
+        }
+
+        function chSceneC3Click() {
+            const ren = document.getElementById('ch1');
+            const uv = document.getElementById('ch2');
+            const nor = document.getElementById('ch3');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '12000';
+        }
+
+        function gSceneC1Click() {
+            const ren = document.getElementById('g1');
+            const uv = document.getElementById('g2');
+            const nor = document.getElementById('g3');
+            const g4 = document.getElementById('g4');
+            const g5 = document.getElementById('g5');
+
+            if (ren) ren.style.zIndex = '12000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '11000';
+            if (g4) g4.style.zIndex = '11000';
+            if (g5) g5.style.zIndex = '11000';
+        }
+
+        function gSceneC2Click() {
+            const ren = document.getElementById('g1');
+            const uv = document.getElementById('g2');
+            const nor = document.getElementById('g3');
+            const g4 = document.getElementById('g4');
+            const g5 = document.getElementById('g5');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '12000';
+            if (nor) nor.style.zIndex = '11000';
+            if (g4) g4.style.zIndex = '11000';
+            if (g5) g5.style.zIndex = '11000';
+        }
+
+        function gSceneC3Click() {
+            const ren = document.getElementById('g1');
+            const uv = document.getElementById('g2');
+            const nor = document.getElementById('g3');
+            const g4 = document.getElementById('g4');
+            const g5 = document.getElementById('g5');
+
+            if (ren) ren.style.zIndex = '11000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '12000';
+            if (g4) g4.style.zIndex = '11000';
+            if (g5) g5.style.zIndex = '11000';
+        }
+
+            function gSceneC4Click() {
+                const ren = document.getElementById('g1');
+                const uv = document.getElementById('g2');
+                const nor = document.getElementById('g3');
+                const g4 = document.getElementById('g4');
+                const g5 = document.getElementById('g5');
+    
+                if (ren) ren.style.zIndex = '11000';
+                if (uv) uv.style.zIndex = '11000';
+                if (nor) nor.style.zIndex = '11000';
+                if (g4) g4.style.zIndex = '12000';
+                if (g5) g5.style.zIndex = '11000';
+            }
+
+            function gSceneC5Click() {
+                const ren = document.getElementById('g1');
+                const uv = document.getElementById('g2');
+                const nor = document.getElementById('g3');
+                const g4 = document.getElementById('g4');
+                const g5 = document.getElementById('g5');
+    
+                if (ren) ren.style.zIndex = '11000';
+                if (uv) uv.style.zIndex = '11000';
+                if (nor) nor.style.zIndex = '11000';
+                if (g4) g4.style.zIndex = '11000';
+                if (g5) g5.style.zIndex = '12000';
+            }
+
+            function gcSceneC1Click() {
+            const ren = document.getElementById('gc1');
+            const uv = document.getElementById('gc2');
+            const nor = document.getElementById('gc3');
+            const g4 = document.getElementById('gc4');
+            const g5 = document.getElementById('gc5');
+            const g6 = document.getElementById('gc6');
+            const g7 = document.getElementById('gc7');
+            const g8 = document.getElementById('gc8');
+
+            if (ren) ren.style.zIndex = '12000';
+            if (uv) uv.style.zIndex = '11000';
+            if (nor) nor.style.zIndex = '11000';
+            if (g4) g4.style.zIndex = '11000';
+            if (g5) g5.style.zIndex = '11000';
+            if (g6) g6.style.zIndex = '11000';
+            if (g7) g7.style.zIndex = '11000';
+            if (g8) g8.style.zIndex = '11000';
+        }
+
+            function gcSceneC2Click() {
+                const ren = document.getElementById('gc1');
+                const uv = document.getElementById('gc2');
+                const nor = document.getElementById('gc3');
+                const g4 = document.getElementById('gc4');
+                const g5 = document.getElementById('gc5');
+                const g6 = document.getElementById('gc6');
+                const g7 = document.getElementById('gc7');
+                const g8 = document.getElementById('gc8');
+    
+                if (ren) ren.style.zIndex = '11000';
+                if (uv) uv.style.zIndex = '12000';
+                if (nor) nor.style.zIndex = '11000';
+                if (g4) g4.style.zIndex = '11000';
+                if (g5) g5.style.zIndex = '11000';
+                if (g6) g6.style.zIndex = '11000';
+                if (g7) g7.style.zIndex = '11000';
+                if (g8) g8.style.zIndex = '11000';
+            }
+
+        
+            function gcSceneC3Click() {
+                const ren = document.getElementById('gc1');
+                const uv = document.getElementById('gc2');
+                const nor = document.getElementById('gc3');
+                const g4 = document.getElementById('gc4');
+                const g5 = document.getElementById('gc5');
+                const g6 = document.getElementById('gc6');
+                const g7 = document.getElementById('gc7');
+                const g8 = document.getElementById('gc8');
+    
+                if (ren) ren.style.zIndex = '11000';
+                if (uv) uv.style.zIndex = '11000';
+                if (nor) nor.style.zIndex = '12000';
+                if (g4) g4.style.zIndex = '11000';
+                if (g5) g5.style.zIndex = '11000';
+                if (g6) g6.style.zIndex = '11000';
+                if (g7) g7.style.zIndex = '11000';
+                if (g8) g8.style.zIndex = '11000';
+            }
+
+             function gcSceneC4Click() {
+                const ren = document.getElementById('gc1');
+                const uv = document.getElementById('gc2');
+                const nor = document.getElementById('gc3');
+                const g4 = document.getElementById('gc4');
+                const g5 = document.getElementById('gc5');
+                const g6 = document.getElementById('gc6');
+                const g7 = document.getElementById('gc7');
+                const g8 = document.getElementById('gc8');
+    
+                if (ren) ren.style.zIndex = '11000';
+                if (uv) uv.style.zIndex = '11000';
+                if (nor) nor.style.zIndex = '11000';
+                if (g4) g4.style.zIndex = '12000';
+                if (g5) g5.style.zIndex = '11000';
+                if (g6) g6.style.zIndex = '11000';
+                if (g7) g7.style.zIndex = '11000';
+                if (g8) g8.style.zIndex = '11000';
+            }
+
+             function gcSceneC5Click() {
+                const ren = document.getElementById('gc1');
+                const uv = document.getElementById('gc2');
+                const nor = document.getElementById('gc3');
+                const g4 = document.getElementById('gc4');
+                const g5 = document.getElementById('gc5');
+                const g6 = document.getElementById('gc6');
+                const g7 = document.getElementById('gc7');
+                const g8 = document.getElementById('gc8');
+    
+                if (ren) ren.style.zIndex = '11000';
+                if (uv) uv.style.zIndex = '11000';
+                if (nor) nor.style.zIndex = '11000';
+                if (g4) g4.style.zIndex = '11000';
+                if (g5) g5.style.zIndex = '12000';
+                if (g6) g6.style.zIndex = '11000';
+                if (g7) g7.style.zIndex = '11000';
+                if (g8) g8.style.zIndex = '11000';
+            }
+
+                function gcSceneC6Click() {
+                    const ren = document.getElementById('gc1');
+                    const uv = document.getElementById('gc2');
+                    const nor = document.getElementById('gc3');
+                    const g4 = document.getElementById('gc4');
+                    const g5 = document.getElementById('gc5');
+                    const g6 = document.getElementById('gc6');
+                    const g7 = document.getElementById('gc7');
+                    const g8 = document.getElementById('gc8');
+        
+                    if (ren) ren.style.zIndex = '11000';
+                    if (uv) uv.style.zIndex = '11000';
+                    if (nor) nor.style.zIndex = '11000';
+                    if (g4) g4.style.zIndex = '11000';
+                    if (g5) g5.style.zIndex = '11000';
+                    if (g6) g6.style.zIndex = '12000';
+                    if (g7) g7.style.zIndex = '11000';
+                    if (g8) g8.style.zIndex = '11000';
+                }
+    
+                function gcSceneC7Click() {
+                    const ren = document.getElementById('gc1');
+                    const uv = document.getElementById('gc2');
+                    const nor = document.getElementById('gc3');
+                    const g4 = document.getElementById('gc4');
+                    const g5 = document.getElementById('gc5');
+                    const g6 = document.getElementById('gc6');
+                    const g7 = document.getElementById('gc7');
+                    const g8 = document.getElementById('gc8');
+        
+                    if (ren) ren.style.zIndex = '11000';
+                    if (uv) uv.style.zIndex = '11000';
+                    if (nor) nor.style.zIndex = '11000';
+                    if (g4) g4.style.zIndex = '11000';
+                    if (g5) g5.style.zIndex = '11000';
+                    if (g6) g6.style.zIndex = '11000';
+                    if (g7) g7.style.zIndex = '12000';
+                    if (g8) g8.style.zIndex = '11000';
+                }
+
+                function gcSceneC8Click() {
+                    const ren = document.getElementById('gc1');
+                    const uv = document.getElementById('gc2');
+                    const nor = document.getElementById('gc3');
+                    const g4 = document.getElementById('gc4');
+                    const g5 = document.getElementById('gc5');
+                    const g6 = document.getElementById('gc6');
+                    const g7 = document.getElementById('gc7');
+                    const g8 = document.getElementById('gc8');
+        
+                    if (ren) ren.style.zIndex = '11000';
+                    if (uv) uv.style.zIndex = '11000';
+                    if (nor) nor.style.zIndex = '11000';
+                    if (g4) g4.style.zIndex = '11000';
+                    if (g5) g5.style.zIndex = '11000';
+                    if (g6) g6.style.zIndex = '11000';
+                    if (g7) g7.style.zIndex = '11000';
+                    if (g8) g8.style.zIndex = '12000';
+                }
+        // Hover effects for containers and circles
+
+
+
+
+
+
+        const containers = ['scontainer2', 'scontainer4', 'scontainer5', 'scontainer6'];
+
+        const circles = ['s2c', 's4c', 's5c', 's6c'];
+
+        for (let i = 0; i < containers.length; i++) {
+            const container = document.querySelector('.' + containers[i]);
+            const circle = document.getElementById(circles[i]);
+            container.addEventListener('mouseenter', () => {
+                circle.style.background = 'rgba(15, 33, 48)';
+                circle.style.transform = 'translate(-50%, -50%) scale(1.2)';
+            });
+            container.addEventListener('mouseleave', () => {
+                circle.style.background = 'rgb(1, 17, 31)';
+                circle.style.transform = 'translate(-50%, -50%) scale(1)';
+            });
+        }
+
+        const scontainer2 = document.querySelector('.scontainer2');
+        const sobjects = document.querySelector('.sobjects');
+
+        if (scontainer2 && sobjects) {
+            scontainer2.addEventListener('click', () => {
+                sobjects.classList.add('show');
+                sobjects.style.opacity = '';
+            });
+        }
+    </script>
+    </script>
+</body>
+</html>
+
