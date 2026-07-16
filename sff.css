@@ -361,6 +361,15 @@ ul {
   object-fit: fill;
 }
 
+#boardsum {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
 #ball {
   position: absolute;
   top: 69%;
@@ -392,6 +401,23 @@ ul {
 }
 
 #buttle:hover {
+  opacity: 1;
+}
+
+#bordersum {
+  position: absolute;
+  top: 23%;
+  left: 23.3%;
+  width: 18%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+#bordersum:hover {
   opacity: 1;
 }
 
@@ -612,6 +638,20 @@ ul {
   font-size: 10cqw;
 }
 
+.sum p {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  text-align: left;
+  z-index: 10003;
+  font-family: "Jenson-semibolditalic", serif;
+  color: white;
+  font-size: 10cqw;
+}
+
+
 .scontainer6 p {
  bottom: -6%;
  left: 26%;
@@ -721,11 +761,36 @@ ul {
   overflow: hidden;
 }
 
+.sum {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  /* Match your board.jpg aspect ratio — change 16/9 if different */
+  width: max(100vw, 100vh * (16 / 9));
+  height: max(100vh, 100vw * (9 / 16));
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(27, 27, 27);
+}
+
 .sobjects.show {
   display: block;
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+
+.sum.show {
+  display: block;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
 
 #sphereback2 {
   position: absolute;
@@ -738,12 +803,21 @@ ul {
 }
 
 #so1{
-  background-color: rgba(8, 15, 22, 0.781);
+  background-color: rgba(17, 17, 17, 0.781);
   z-index: 11006;
   left: 65%;
   top: 50%;
   width: 31.7%;
   height: 75%;
+}
+
+#sumc1{
+  background-color: rgba(22, 22, 22, 0.781);
+  z-index: 11006;
+  left: 65%;
+  top: 50%;
+  width: 67.5vh;
+  height: 90vh;
 }
 
 #so2{
@@ -767,8 +841,57 @@ ul {
   height: 13%;
 }
 
+#sumc2{
+  background-color: rgb(17, 17, 17);
+  z-index: 11006;
+  top: 85%;
+  height: 13%;
+}
+
+#sumc3{
+  background-color: rgb(17, 17, 17);
+  z-index: 11006;
+  top: 71%;
+  height: 13%;
+}
+
+#sumc4{
+  background-color: rgb(17, 17, 17);
+  z-index: 11006;
+  top: 57%;
+  height: 13%;
+}
+
+#sumc5{
+  background-color: rgb(17, 17, 17);
+  z-index: 11006;
+  top: 43%;
+  height: 13%;
+}
+
+#sumc6{
+  background-color: rgb(17, 17, 17);
+  z-index: 11006;
+  top: 29%;
+  height: 13%;
+}
+
+#sumc7{
+  background-color: rgb(17, 17, 17);
+  z-index: 11006;
+  top: 15%;
+  height: 13%;
+}
+
+
+
 .sobjects .scontainer3 {
   background-color: rgba(8, 15, 22, 0.781);
+  transition: transform 0.3s ease;
+}
+
+.sum .scontainer3 {
+  background-color: rgba(19, 19, 19, 0.781);
   transition: transform 0.3s ease;
 }
 
@@ -776,6 +899,15 @@ ul {
 #so2:hover,
 #so3:hover,
 #so4:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+#sumc2:hover,
+#sumc3:hover,
+#sumc4:hover,
+#sumc5:hover,
+#sumc6:hover,
+#sumc7:hover {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
@@ -789,6 +921,21 @@ ul {
   max-height: 240px;
   border: none;
   background: rgba(2, 41, 75, 0.897);
+  transform: translate(-50%, -50%);
+  z-index: 10004;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.sum .circle {
+  position: absolute;
+  top: 90%;
+  left: 5%;
+  width: 3.8vw;
+  height: 3.8vw;
+  max-width: 240px;
+  max-height: 240px;
+  border: none;
+  background: rgba(102, 102, 102, 0.11);
   transform: translate(-50%, -50%);
   z-index: 10004;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -809,6 +956,21 @@ ul {
   left: 13%;
 }
 
+#soc5 {
+  top: 50%;
+  left: 13%;
+}
+
+#soc6 {
+  top: 50%;
+  left: 13%;
+}
+
+#soc7 {
+  top: 50%;
+  left: 13%;
+}
+
 .sobjects  .circle p {
     position: absolute;
     top: -45%;
@@ -820,6 +982,20 @@ ul {
     color: white;
     font-size: 3cqw;
   }
+
+
+.sum  .circle p {
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10005;
+    font-family: "Jenson-semibold", serif;
+    color: white;
+    font-size: 3cqw;
+  }
+
 
 #so2 .textmove {
   left: 50%;
@@ -858,6 +1034,84 @@ ul {
   font-size: 0.9cqw;
   bottom: 5%;
   left: 42%;
+}
+
+#sumc2 .textmove {
+  left: 45%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#sumc3 .textmove {
+  left: 39%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#sumc4 .textmove {
+  left: 45%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#sumc5 .textmove {
+  left: 39%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#sumc6 .textmove {
+  left: 43%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#sumc7 .textmove {
+  left: 43%;
+  bottom: -2%;
+  font-size: 2cqw;
+  font-family: jenson-semibolditalic, serif;
+}
+
+#sumc2 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 51%;
+}
+
+#sumc3 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 45%;
+}
+
+#sumc4 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 42%;
+}
+
+#sumc5 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 51%;
+}
+
+#sumc6 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 50%;
+}
+
+#sumc7 .smalltext {
+  font-size: 0.9cqw;
+  bottom: 5%;
+  left: 55%;
 }
 
 .svideo {
@@ -1636,4 +1890,67 @@ ul {
 .ggame .scircle:hover {
   background: rgba(29, 66, 75, 0.712);
   transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Side menu (slides in from the right) */
+.sidemenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100vh;
+  background: rgba(2, 8, 12, 0.95);
+  transform: translateX(100%);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 12000;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidemenu.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidemenu.open .sidebutton {
+ transform: translateX(-500%);
+}
+
+.sidebutton {
+  position: fixed;
+  top: 50%;
+  right: -1.5vh;
+  transform: translateY(-50%);
+  width: 10vh;
+  height: auto;
+  background: none;
+  border: none;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 13000;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.sidebutton img {
+  width: 70%;
+  height: auto;
+  display: block;
+}
+
+.sidebutton:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.sidemenu img {
+  height: 100vh;
+  width: auto;
+}
+
+#sum1 {
+  z-index: 12001;
 }

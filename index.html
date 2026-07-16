@@ -30,27 +30,95 @@
             </ul>
         </div>
     </div>
-    <div class="sign">
+        <div class="sign">
         <video id="bg-video" src="./signmove.mp4" muted playsinline></video>
         <img src="sign.jpg" id="signimg" alt="Sign">
         <div class="circle" onclick="circleClick()">
             <img src="arrow.svg" alt="Circle">
         </div>
+        <div class="sidemenu">
+            <img src="NEW/Asset 1@2x.png">
+        </div>
         <video id="signreturn" src="./signmove-reverse.mp4" muted playsinline></video>
+        <div class="sidebutton"> 
+        <img src="NEW/ASS2.png" alt="menu">
+        </div>
     </div>
+
+    <!-- sidebutton kept outside the transformed/hidden menu so it's always reachable -->
+    
     <div class="board">
         <video id="bg-video" src="./boardmove.mp4" muted playsinline></video>
         <div id="board-container">
         <img id="boardimg" src="board.jpg" />
+        <img src="NEW/SUMMONING.png" id="boardsum" />
         <img id="ball" src="ball.png" onclick="ballClick()" />
         <img src="buttle.png" id="buttle" alt="" onclick="cheersShow()">
         <img src="healer.png" id="healer" alt="" onclick="gcheersShow()">
+        <img src="NEW/SUMMONING BORDER.png" id="bordersum" alt="" onclick="sumShow()">
 
         </div>
         <div class="circleboard" onclick="circleBoardClick()">
             <img src="arrow.svg" alt="Circle">
         </div>
         <video id="boardreturn" src="./boardmove-reverse.mp4" muted playsinline></video>
+    </div>
+    <div class="sum">
+        <div class="scontainer6" id="sumc1">
+            <img src="NEW/SUMMONING/1.jpg" class="sphere-img" id="sum1">
+            <img src="NEW/SUMMONING/2.jpg" class="sphere-img" id="sum2">
+            <img src="NEW/SUMMONING/3.jpg" class="sphere-img" id="sum3">
+            <img src="NEW/SUMMONING/4.jpg" class="sphere-img" id="sum4">
+            <img src="NEW/SUMMONING/5.jpg" class="sphere-img" id="sum5">
+            <img src="NEW/SUMMONING/6.jpg" class="sphere-img" id="sum6">
+        </div> 
+        <div class="scontainer3" id="sumc2" onclick="sumc2Click()">
+            <div class="circle" id="soc2"><p>6</p></div>
+            <p class="textmove">The Harvest</p>
+            <p class="smalltext">The summoning was completed</p>
+        </div>
+
+        <div class="scontainer3" id="sumc3" onclick="sumc3Click()">
+            <div class="circle" id="soc3"><p>5</p></div>
+            <p class="textmove">Arrival</p>
+            <p class="smalltext">They are so beautiful!</p>
+        </div>
+
+        <div class="scontainer3" id="sumc4" onclick="sumc4Click()">
+            <div class="circle" id="soc4"><p>4</p></div>
+            <p class="textmove">Summoning</p>
+            <p class="smalltext">I cant fail now</p>
+        </div>
+        <div class="scontainer3" id="sumc5" onclick="sumc5Click()">
+            <div class="circle" id="soc5"><p>3</p></div>
+            <p class="textmove">Truth</p>
+            <p class="smalltext">Nooooo! This cant be true!</p>
+        </div>
+
+        <div class="scontainer3" id="sumc6" onclick="sumc6Click()">
+            <div class="circle" id="soc6"><p>2</p></div>
+            <p class="textmove">Grimoire</p>
+            <p class="smalltext">It has always watched us...</p>
+        </div>
+
+        <div class="scontainer3" id="sumc7" onclick="sumc7Click()">
+            <div class="circle" id="soc7"><p>1</p></div>
+            <p class="textmove">Discovery</p>
+            <p class="smalltext">I found a curious book in my cellar</p>
+        </div>
+
+        <div class="scircle" onclick="sumClose()">
+                <img src="arrow.svg" alt="Circle">     
+        </div>
+    </div>
+    <div class="svideo">
+         <img src="/SPHERE/blured.jpg" id="sphereback2" alt="Sphere">
+         <div class="scircle" onclick="sVideoHide()">
+                <img src="arrow.svg" alt="Circle">     
+        </div>
+        <video src="SPHERE/video.mp4" class="sv" id="sv"></video>
+        <div class="scircle" id="svplay" onclick="svPlay()"><p>!</p></div>
+
     </div>
     <div class="sorcerer">
             <img src="/SPHERE/blured.jpg" id="sphereback" alt="Sphere">
@@ -440,6 +508,12 @@
                 clicker.style.display = 'none';
             }, 500);
         }
+
+        function setSignButtonVisible(visible) {
+            const button = document.querySelector('.sidebutton');
+            if (!button) return;
+            button.style.display = visible ? 'flex' : 'none';
+        }
         
         function aboutMeClick() {
             const base = document.querySelector('.base');
@@ -457,16 +531,19 @@
                 sign.style.opacity = '1';
             }, 10);
             
-            // Play the video
+            // Play the video and only reveal the circle/button after it finishes
             video.style.display = 'block';
             signimg.style.display = 'block';
-            circle.style.display = 'block';
+            circle.style.display = 'none';
+            setSignButtonVisible(false);
             video.play();
             
-            // Hide video when it ends
+            // Reveal the circle and side button once the intro video ends
             video.addEventListener('ended', () => {
                 video.style.display = 'none';
-            });
+                circle.style.display = 'block';
+                setSignButtonVisible(true);
+            }, { once: true });
         }
         
         function circleClick() {
@@ -479,7 +556,7 @@
             if (signimg) {
                 signimg.style.display = 'none';
                 circle.style.display = 'none';
-
+                setSignButtonVisible(false);
             }
             if (returnVideo) {
                 returnVideo.style.display = 'block';
@@ -500,6 +577,11 @@
             const video = sign.querySelector('video');
             const circle = document.querySelector('.circleboard');
             const signimg = document.getElementById('boardimg');
+            const boardsum = document.getElementById('boardsum');
+            const bordersum = document.getElementById('bordersum');
+            const ball = document.getElementById('ball');
+            const buttle = document.getElementById('buttle');
+            const healer = document.getElementById('healer');
             
             // Hide base
             base.style.display = 'none';
@@ -510,16 +592,28 @@
                 sign.style.opacity = '1';
             }, 10);
             
+            // Hide board elements until the intro video ends
+            if (boardsum) boardsum.style.display = 'none';
+            if (bordersum) bordersum.style.display = 'none';
+            if (ball) ball.style.display = 'none';
+            if (buttle) buttle.style.display = 'none';
+            if (healer) healer.style.display = 'none';
+            
             // Play the video
             video.style.display = 'block';
             signimg.style.display = 'block';
             circle.style.display = 'block';
             video.play();
             
-            // Hide video when it ends
+            // Display board elements when the intro video ends
             video.addEventListener('ended', () => {
                 video.style.display = 'none';
-            });
+                if (boardsum) boardsum.style.display = 'block';
+                if (bordersum) bordersum.style.display = 'block';
+                if (ball) ball.style.display = 'block';
+                if (buttle) buttle.style.display = 'block';
+                if (healer) healer.style.display = 'block';
+            }, { once: true });
         }
         
          function circleBoardClick() {
@@ -528,11 +622,20 @@
             const circle = document.querySelector('.circleboard');
             const signimg = document.getElementById('boardimg');
             const returnVideo = document.getElementById('boardreturn');
+            const boardsum = document.getElementById('boardsum');
+            const bordersum = document.getElementById('bordersum');
+            const ball = document.getElementById('ball');
+            const buttle = document.getElementById('buttle');
+            const healer = document.getElementById('healer');
             
             if (signimg) {
                 signimg.style.display = 'none';
                 circle.style.display = 'none';
-
+                boardsum.style.display = 'none';
+                ball.style.display = 'none';
+                buttle.style.display = 'none';
+                healer.style.display = 'none';
+                bordersum.style.display = 'none';
             }
             if (returnVideo) {
                 returnVideo.style.display = 'block';
@@ -596,9 +699,28 @@
             cheers.style.opacity = '1';
         }
 
+         function sumShow() {
+            const cheers = document.querySelector('.sum');
+            if (!cheers) return;
+
+            cheers.style.display = 'block';
+            cheers.style.opacity = '0';
+            void cheers.offsetWidth;
+            cheers.style.transition = 'opacity 0.5s ease';
+            cheers.style.opacity = '1';
+        }
+
 
         function scircleClick() {
             const sorcerer = document.querySelector('.sorcerer');
+            sorcerer.style.opacity = '0';
+            setTimeout(() => {
+                sorcerer.style.display = 'none';
+            }, 500);
+        }
+
+        function sumClose() {
+            const sorcerer = document.querySelector('.sum');
             sorcerer.style.opacity = '0';
             setTimeout(() => {
                 sorcerer.style.display = 'none';
@@ -774,6 +896,102 @@
             if (si2) si2.style.zIndex = '11000';
             if (si1) si1.style.zIndex = '12000';
             if (si3) si3.style.zIndex = '11000';
+        }
+
+         function sumc2Click() {
+            const sum1 = document.getElementById('sum1');
+            const sum2 = document.getElementById('sum2');
+            const sum3 = document.getElementById('sum3');
+            const sum4 = document.getElementById('sum4');
+            const sum5 = document.getElementById('sum5');
+            const sum6 = document.getElementById('sum6');
+
+            if (sum1) sum1.style.zIndex = '11000';
+            if (sum2) sum2.style.zIndex = '11000';
+            if (sum3) sum3.style.zIndex = '11000';
+            if (sum4) sum4.style.zIndex = '11000';
+            if (sum5) sum5.style.zIndex = '11000';
+            if (sum6) sum6.style.zIndex = '12000';
+        }
+
+         function sumc3Click() {
+            const sum1 = document.getElementById('sum1');
+            const sum2 = document.getElementById('sum2');
+            const sum3 = document.getElementById('sum3');
+            const sum4 = document.getElementById('sum4');
+            const sum5 = document.getElementById('sum5');
+            const sum6 = document.getElementById('sum6');
+
+            if (sum1) sum1.style.zIndex = '11000';
+            if (sum2) sum2.style.zIndex = '11000';
+            if (sum3) sum3.style.zIndex = '11000';
+            if (sum4) sum4.style.zIndex = '11000';
+            if (sum5) sum5.style.zIndex = '12000';
+            if (sum6) sum6.style.zIndex = '11000';
+        }
+
+         function sumc4Click() {
+            const sum1 = document.getElementById('sum1');
+            const sum2 = document.getElementById('sum2');
+            const sum3 = document.getElementById('sum3');
+            const sum4 = document.getElementById('sum4');
+            const sum5 = document.getElementById('sum5');
+            const sum6 = document.getElementById('sum6');
+
+            if (sum1) sum1.style.zIndex = '11000';
+            if (sum2) sum2.style.zIndex = '11000';
+            if (sum3) sum3.style.zIndex = '11000';
+            if (sum4) sum4.style.zIndex = '12000';
+            if (sum5) sum5.style.zIndex = '11000';
+            if (sum6) sum6.style.zIndex = '11000';
+        }
+
+         function sumc5Click() {
+            const sum1 = document.getElementById('sum1');
+            const sum2 = document.getElementById('sum2');
+            const sum3 = document.getElementById('sum3');
+            const sum4 = document.getElementById('sum4');
+            const sum5 = document.getElementById('sum5');
+            const sum6 = document.getElementById('sum6');
+
+            if (sum1) sum1.style.zIndex = '11000';
+            if (sum2) sum2.style.zIndex = '11000';
+            if (sum3) sum3.style.zIndex = '12000';
+            if (sum4) sum4.style.zIndex = '11000';
+            if (sum5) sum5.style.zIndex = '11000';
+            if (sum6) sum6.style.zIndex = '11000';
+        }
+
+         function sumc6Click() {
+            const sum1 = document.getElementById('sum1');
+            const sum2 = document.getElementById('sum2');
+            const sum3 = document.getElementById('sum3');
+            const sum4 = document.getElementById('sum4');
+            const sum5 = document.getElementById('sum5');
+            const sum6 = document.getElementById('sum6');
+
+            if (sum1) sum1.style.zIndex = '11000';
+            if (sum2) sum2.style.zIndex = '12000';
+            if (sum3) sum3.style.zIndex = '11000';
+            if (sum4) sum4.style.zIndex = '11000';
+            if (sum5) sum5.style.zIndex = '11000';
+            if (sum6) sum6.style.zIndex = '11000';
+        }
+
+        function sumc7Click() {
+            const sum1 = document.getElementById('sum1');
+            const sum2 = document.getElementById('sum2');
+            const sum3 = document.getElementById('sum3');
+            const sum4 = document.getElementById('sum4');
+            const sum5 = document.getElementById('sum5');
+            const sum6 = document.getElementById('sum6');
+
+            if (sum1) sum1.style.zIndex = '12000';
+            if (sum2) sum2.style.zIndex = '11000';
+            if (sum3) sum3.style.zIndex = '11000';
+            if (sum4) sum4.style.zIndex = '11000';
+            if (sum5) sum5.style.zIndex = '11000';
+            if (sum6) sum6.style.zIndex = '11000';
         }
 
         function svPlay() {
@@ -1223,6 +1441,32 @@
             });
         }
     </script>
+    </script>
+    <script>
+        // Side menu toggle: open/close on button click, close on outside click or Escape
+        document.addEventListener('DOMContentLoaded', function () {
+            const sideBtn = document.querySelector('.sidebutton');
+            const sidemenu = document.querySelector('.sidemenu');
+
+            if (!sideBtn || !sidemenu) return;
+
+            sideBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                sidemenu.classList.toggle('open');
+            });
+
+            // Close when clicking outside the menu
+            document.addEventListener('click', function (e) {
+                if (!sidemenu.contains(e.target) && !sideBtn.contains(e.target)) {
+                    sidemenu.classList.remove('open');
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') sidemenu.classList.remove('open');
+            });
+        });
     </script>
 </body>
 </html>
